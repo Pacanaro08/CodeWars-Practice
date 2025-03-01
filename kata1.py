@@ -15,37 +15,37 @@
 # When three people meet whose native languages are German, French, and Romansh, the group language is Italian: DFK → I
 
 
-def trilingual_democracy(group):
+def trilingual_democracy(group:str):
     languages = ("D", "F", "I", "K")
-    firstLetter = ""
-    seccondLetter = ""
-    thirdLetter = ""
-    groupLanguage = ""
-    for people in group:
-        if firstLetter == "":
-            firstLetter = people
-        elif seccondLetter == "":
-            seccondLetter = people
-        else:
-            thirdLetter = people
-    
-    if firstLetter == seccondLetter and seccondLetter == thirdLetter:
-        groupLanguage = firstLetter
-    elif firstLetter != seccondLetter and firstLetter != thirdLetter and seccondLetter != thirdLetter:
-        for language in languages:
-            if language not in group:
-                groupLanguage = language
-    else:
-        if firstLetter == seccondLetter:
-            groupLanguage = thirdLetter
-        elif seccondLetter == thirdLetter:
+    firstLetter, seccondLetter, thirdLetter, groupLanguage = "", "", "", ""
+    if all(letter in languages for letter in group.upper()) and len(group) == 3:
+        for people in group.upper():
+            if firstLetter == "":
+                firstLetter = people
+            elif seccondLetter == "":
+                seccondLetter = people
+            else:
+                thirdLetter = people
+        
+        if firstLetter == seccondLetter and seccondLetter == thirdLetter:
             groupLanguage = firstLetter
+        elif firstLetter != seccondLetter and firstLetter != thirdLetter and seccondLetter != thirdLetter:
+            for language in languages:
+                if language not in group:
+                    groupLanguage = language
         else:
-            groupLanguage = seccondLetter
+            if firstLetter == seccondLetter:
+                groupLanguage = thirdLetter
+            elif seccondLetter == thirdLetter:
+                groupLanguage = firstLetter
+            else:
+                groupLanguage = seccondLetter
+        # print(groupLanguage)
+        return(groupLanguage)
+    else:
+        return ''
+        # print('')
 
 
-
-    print(groupLanguage)
-
-group = input('Create the Group of People Using 3 Words (D, F, I or K):')
-trilingual_democracy(group)
+# group = input('Create the Group of People Using 3 Words (D, F, I or K):')
+# trilingual_democracy(group)
