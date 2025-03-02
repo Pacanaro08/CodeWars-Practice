@@ -5,13 +5,13 @@
 # * 'abc' =>  ['ab', 'c_']
 # * 'abcdef' => ['ab', 'cd', 'ef']
 
-def solution(s):
+def solution(string):
     group = ''
     i = 0
     j = 0
     result = []
 
-    for character in s:
+    for character in string:
         i += 1
         j += 1
         group = group + character
@@ -19,10 +19,9 @@ def solution(s):
             result.append(group)
             group = ''
             i = 0
-        elif len(group) == 1 and j == len(s):
+        elif len(group) == 1 and j == len(string):
             group = group + '_'
             result.append(group)
 
     return result
 
-solution('abc')

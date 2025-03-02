@@ -18,9 +18,12 @@
 
 def rpsls(pl1, pl2):
     wins = {'scissors': ['paper', 'lizard'],'paper': ['rock', 'spock'],'rock': ['lizard', 'scissors'],'lizard': ['spock', 'paper'],'spock': ['scissors', 'rock']}
-    if pl2 in wins[pl1]:
-        return 'Player 1 Won!'
-    if pl1 in wins[pl2]:
-        return 'Player 2 Won!'
-    if pl1 == pl2:
-        return 'Draw!'
+    try:
+        if pl2 in wins[pl1]:
+            return 'Player 1 Won!'
+        if pl1 in wins[pl2]:
+            return 'Player 2 Won!'
+        if pl1 == pl2:
+            return 'Draw!'
+    except:
+        return 'Not a valid play!'

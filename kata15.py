@@ -13,7 +13,5 @@ def initials(name:str):
             name_initials += name[i].capitalize()
             name_initials += '.'
         i += 1
-    print(name_initials[0:len(name_initials) - 1])
+    return(name_initials[0:len(name_initials) - 1])
     
-
-initials('pietro pacanaro')

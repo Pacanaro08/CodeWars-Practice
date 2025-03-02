@@ -7,5 +7,3 @@ def find_average(numbers):
         return (sum(numbers)/len(numbers))
     else:
         return 0
-
-find_average([2,6,5,7,9,8.8,4,0.1,5.3])

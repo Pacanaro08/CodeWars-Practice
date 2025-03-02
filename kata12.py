@@ -7,13 +7,11 @@
 
 # array_diff([1,2,2,2,3],[2]) == [1,3]
 
-def array_diff(a, b):
-    i = len(a) - 1
+def array_diff(array1, array2):
+    i = len(array1) - 1
     while i >= 0:
-        if a[i] in b:
-            a.pop(i)
+        if array1[i] in array2:
+            array1.pop(i)
         i-=1
 
-    print(a)
-
-array_diff([1,2],[1])
+    return array1

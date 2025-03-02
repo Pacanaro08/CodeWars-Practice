@@ -30,4 +30,8 @@ def histogram(results):
         else:
             res += '\n'
         i -= 1
-    return res
+    return res.strip()
+    # print(res)
+
+
+# histogram([7,3,10,1,0,5])

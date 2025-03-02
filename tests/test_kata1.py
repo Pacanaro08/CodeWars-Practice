@@ -1,4 +1,6 @@
-import pytest
+import pytest, sys
+sys.path.append('..')
+
 from kata1 import trilingual_democracy
 
 @pytest.mark.parametrize('group, expected', [
